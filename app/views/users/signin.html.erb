@@ -1,8 +1,7 @@
-<%= form_for @user, url: "/users/login" do |f| %>
-    <div class="field"><%= f.label :name, "Select your name" %><br>
-      <%= f.collection_select(:id, @users, :id, :name) %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Sign In"  %>
-    </div>
-  <% end %>
+
+<%= form_tag ('/users/login') do %>
+
+  Select Your Name: <%=collection_select(:user, :name, User.all, :name, :name)%>
+  Password: <input name=user[password] type="text" id="password">
+  <input type="submit" value='Sign In'>
+<% end %>
