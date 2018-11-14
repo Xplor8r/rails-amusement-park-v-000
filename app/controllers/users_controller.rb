@@ -31,20 +31,16 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)
       else
         render :edit
-        redirect_to controller: 'users', action: 'edit'
       end
   end
 
   private
+    def user_params
+      params.require(:user).permit(:name, :admin, :password, :happiness, :tickets, :height, :nausea)
+    end
 
-  def user_params
-    params.require(:user).permit(:name, :password, :happiness, :tickets, :height, :nausea)
-  end
-<<<<<<< HEAD
 
   def user
     @user = User.find(params[:id])
   end
-=======
->>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
 end
