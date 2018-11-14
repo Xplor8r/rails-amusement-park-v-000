@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if !@user.save
       render :new
     else
-      notice: "Welcome to the theme park!"
+
       redirect_to user_path(@user)
       @user = User.find(params[:id])
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
       if @user.update(user_params)
-        notice: 'User was successfully updated.'
+
         redirect_to user_path(@user)
       else
         render :edit
