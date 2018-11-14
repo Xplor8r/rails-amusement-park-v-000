@@ -10,9 +10,6 @@ class UsersController < ApplicationController
     @message ||= false
   end
 
-  def edit
-  end
-
   def create
     @user = User.create(user_params)
     if !@user.save
@@ -21,6 +18,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     end
+  end
+  
+  def edit
   end
 
   def update
