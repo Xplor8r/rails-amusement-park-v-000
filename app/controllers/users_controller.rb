@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   before_action :user, only: [:show, :update, :edit, :destroy]
 
-  def new
-    @user = User.new
-  end
-
   def show
     @message = params[:message]
     @message ||= false
+  end
+  
+  def new
+    @user = User.new
   end
 
   def create
