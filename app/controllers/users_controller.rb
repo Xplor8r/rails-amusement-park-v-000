@@ -1,16 +1,12 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
   before_action :user
   skip_before_action :user, only: [:new, :create]
 
-=======
->>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
   def new
     @user = User.new
   end
 
   def show
-<<<<<<< HEAD
     @message = params[:message]
     @message ||= false
   end
@@ -22,8 +18,11 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if !@user.save
       render :new
-=======
-    @user = User.find(params[:id])
+    else
+      notice: "Welcome to the theme park!"
+      redirect_to user_path(@user)
+      @user = User.find(params[:id])
+    end
   end
 
   def edit
