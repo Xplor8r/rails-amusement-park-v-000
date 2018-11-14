@@ -1,5 +1,4 @@
 class AttractionsController < ApplicationController
-<<<<<<< HEAD
   before_action :attraction
   skip_before_action :attraction, only: [:new, :create, :index]
 
@@ -7,13 +6,10 @@ class AttractionsController < ApplicationController
     @ride = Ride.new
   end
 
-=======
->>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
   def edit
   end
 
   def index
-<<<<<<< HEAD
     @attractions = Attraction.all
   end
 
@@ -25,9 +21,10 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.create(attraction_params)
     respond_to do |format|
       if !@attraction.save
-        format.html { render :new }
+        render :new
       else
-        format.html { redirect_to @attraction, notice: 'Attraction was successfully created.' }
+        notice: 'Attraction was successfully created.'
+        redirect_to @attraction
       end
     end
   end
