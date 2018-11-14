@@ -18,8 +18,8 @@ class UsersController < ApplicationController
     if !@user.save
       render :new
     else
-
       session[:user_id] = @user.id
+
       redirect_to user_path(@user)
     end
   end
