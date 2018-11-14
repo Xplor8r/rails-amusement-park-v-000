@@ -16,17 +16,15 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      session[:user_id] = @user.id
-
-      redirect_to user_path(@user)
-    else
       render :new
+    else
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     end
   end
 
   def update
       if @user.update(user_params)
-
         redirect_to user_path(@user)
       else
         render :edit
