@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @message = params[:message]
     @message ||= false
   end
-  
+
   def new
     @user = User.new
   end
