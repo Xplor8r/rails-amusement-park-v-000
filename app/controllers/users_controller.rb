@@ -31,7 +31,6 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)
       else
         render :edit
-=======
         redirect_to controller: 'users', action: 'edit'
       end
   end
