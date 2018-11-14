@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
   def mood
     if happiness && nausea
-      if (happiness - nausea) < 0
+      mood = happiness - nausea
+      if mood < 0
         "sad"
       else
         "happy"
