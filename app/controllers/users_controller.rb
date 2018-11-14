@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     else
 
       redirect_to user_path(@user)
-      @user = User.find(params[:id])
     end
   end
 
