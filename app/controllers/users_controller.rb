@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    if @user.save
+    if !@user.save
       render :new
     else
       session[:user_id] = @user.id
