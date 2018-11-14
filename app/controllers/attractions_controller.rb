@@ -40,7 +40,7 @@ class AttractionsController < ApplicationController
   def destroy
     @attraction.destroy
 
-    redirect_to attractions_url 
+    redirect_to attractions_url
   end
 
   private
