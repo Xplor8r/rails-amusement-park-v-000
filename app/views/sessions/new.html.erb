@@ -1,13 +1,9 @@
-<%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
-  <div class="form-group">
-    <%= f.label :name, "Select your name" %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, "Enter your password" %><br>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign In", { class: "btn btn-primary"} %>
-  </div>
+<%= form_tag signin_path, method: :post do %>
+  <label>Select User:</label>
+  <%= collection_select :user, :name, User.all, :name, :name %> <br>
+
+  <label>Passowrd:</label>
+  <%= text_field_tag :password %> <br>
+  
+  <%= submit_tag "Sign In" %> <br>
 <% end %>
