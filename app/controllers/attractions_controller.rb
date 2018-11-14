@@ -19,22 +19,20 @@ class AttractionsController < ApplicationController
 
   def create
     @attraction = Attraction.create(attraction_params)
-    respond_to do |format|
-      if !@attraction.save
-        render :new
-      else
-        notice: 'Attraction was successfully created.'
-        redirect_to @attraction
-      end
+    if !@attraction.save
+      render :new
+    else
+      notice: 'Attraction was successfully created.'
+      redirect_to @attraction
     end
   end
 
   def update
-    respond_to do |format|
       if @attraction.update(attraction_params)
-        format.html { redirect_to @attraction, notice: 'Attraction was successfully updated.' }
+        notice: 'Attraction was successfully updated.'
+        redirect_to @attraction
       else
-        format.html { render :edit }
+        render :edit
       end
     end
   end
