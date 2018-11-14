@@ -28,21 +28,19 @@ class AttractionsController < ApplicationController
   end
 
   def update
-      if @attraction.update(attraction_params)
-        notice: 'Attraction was successfully updated.'
-        redirect_to @attraction
-      else
-        render :edit
-      end
+    if @attraction.update(attraction_params)
+      notice: 'Attraction was successfully updated.'
+      redirect_to @attraction
+    else
+      render :edit
     end
   end
 
 
   def destroy
     @attraction.destroy
-    respond_to do |format|
-      format.html { redirect_to attractions_url, notice: 'Attraction was successfully destroyed.' }
-    end
+    notice: 'Attraction was successfully destroyed.'
+    redirect_to attractions_url 
   end
 
   private
@@ -53,13 +51,4 @@ class AttractionsController < ApplicationController
     def attraction_params
       params.require(:attraction).permit(:name, :happiness_rating, :min_height, :nausea_rating, :tickets)
     end
-=======
-  end
-
-  def new
-  end
-
-  def show
-  end
->>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
 end
