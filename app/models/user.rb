@@ -14,7 +14,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def num_of_rides
-    attractions.count
-  end
 end
