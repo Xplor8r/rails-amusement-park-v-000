@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
       redirect_to signin_path
     else
       session[:user_id] = @user.id
+<<<<<<< HEAD
       redirect_to user_path(@user)
+=======
+      redirect_to user_path(@user), notice: "Welcome back to the theme park!"
+>>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
     end
   end
 

@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+<<<<<<< HEAD
   before_action :attraction
   skip_before_action :attraction, only: [:new, :create, :index]
 
@@ -6,10 +7,13 @@ class AttractionsController < ApplicationController
     @ride = Ride.new
   end
 
+=======
+>>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
   def edit
   end
 
   def index
+<<<<<<< HEAD
     @attractions = Attraction.all
   end
 
@@ -54,4 +58,13 @@ class AttractionsController < ApplicationController
     def attraction_params
       params.require(:attraction).permit(:name, :happiness_rating, :min_height, :nausea_rating, :tickets)
     end
+=======
+  end
+
+  def new
+  end
+
+  def show
+  end
+>>>>>>> e8377532b7eb71ab9d63994d832d74e2b92e9d61
 end
