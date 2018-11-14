@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :attractions, through: :rides
   has_secure_password
 
-  def mood 
+  def mood
     if self.nausea <= self.happiness
       "happy"
     else
