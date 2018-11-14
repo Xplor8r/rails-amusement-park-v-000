@@ -22,14 +22,14 @@ class AttractionsController < ApplicationController
     if !@attraction.save
       render :new
     else
-      notice: 'Attraction was successfully created.'
+
       redirect_to @attraction
     end
   end
 
   def update
     if @attraction.update(attraction_params)
-      notice: 'Attraction was successfully updated.'
+
       redirect_to @attraction
     else
       render :edit
@@ -39,8 +39,8 @@ class AttractionsController < ApplicationController
 
   def destroy
     @attraction.destroy
-    notice: 'Attraction was successfully destroyed.'
-    redirect_to attractions_url
+
+    redirect_to attractions_url 
   end
 
   private
